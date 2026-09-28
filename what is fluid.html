@@ -18,6 +18,11 @@
     --teal:#0f9b8e;
     --panel:#0e1422;
     --panel-line:#243049;
+    --dyk:#f0b400;
+    --dyk-soft:#fffbef;
+    --dyk-line:#f0e2b8;
+    --dyk-ink:#4a3d1a;
+    --dyk-label:#b58600;
     --radius:16px;
     --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   }
@@ -171,6 +176,48 @@
   .callout.shear{border-left-color:var(--shear)}
   .callout.teal{border-left-color:var(--teal)}
   .callout p{margin:6px 0}
+
+  /* ============ DID YOU KNOW ============ */
+  .didyouknow{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    background:linear-gradient(135deg, #fffbef 0%, #fff8e6 100%);
+    border:1px solid var(--dyk-line);
+    border-left:4px solid var(--dyk);
+    border-radius:12px;
+    padding:14px 18px 14px 16px;
+    margin:22px 0;
+    box-shadow:0 4px 16px rgba(180,140,20,.07);
+  }
+  .didyouknow .dyk-icon{
+    flex:none;
+    width:34px;height:34px;
+    border-radius:50%;
+    background:var(--dyk);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 3px 10px rgba(240,180,0,.40);
+    margin-top:1px;
+  }
+  .didyouknow .dyk-icon svg{width:18px;height:18px;display:block}
+  .didyouknow .dyk-body{flex:1;min-width:0}
+  .didyouknow .dyk-label{
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--dyk-label);
+    margin-bottom:5px;
+  }
+  .didyouknow p{
+    margin:0;
+    font-size:14.5px;
+    color:var(--dyk-ink);
+    line-height:1.62;
+  }
+  .didyouknow p + p{margin-top:8px}
+  .didyouknow strong{color:#3a300f}
 
   .eq{
     background:#fff;border:1px solid var(--line);border-radius:14px;
@@ -387,7 +434,7 @@
     resize:vertical;
   }
   .modal textarea{
-    font-family:var(--mono);font-size:12.5px;line-height:1.55;min-height:230px;
+    font-family:var(--mono);font-size:12.5px;line-height:1.55;min-height:250px;
     white-space:pre;overflow:auto;tab-size:2;
   }
   .modal input:focus,.modal textarea:focus{
@@ -427,6 +474,8 @@
     .nav-btn span{display:none}
     .nav-btn svg{width:16px;height:16px}
     .sim{padding:14px}
+    .didyouknow{padding:12px 14px 12px 12px;gap:11px}
+    .didyouknow .dyk-icon{width:30px;height:30px}
     .edit-toolbar{top:8px;right:8px;padding:5px;gap:4px}
     .edit-toolbar .toggle{padding:7px 10px;font-size:12px}
     .edit-actions{padding-left:5px;gap:4px}
@@ -462,6 +511,16 @@
       <h2><span class="chip">1</span>What is Shear?</h2>
       <p><strong>Shear</strong> refers to a situation where a force acts <em class="term">parallel</em> or <em class="term">tangential</em> to a surface, causing one layer of a material to move or slide relative to another layer.</p>
       <p>In simple words: <strong>shear means sliding layers past each other.</strong></p>
+
+      <div class="didyouknow">
+        <div class="dyk-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg>
+        </div>
+        <div class="dyk-body">
+          <div class="dyk-label">Did you know?</div>
+          <p>The word "shear" comes from the Old English <em>sceran</em> — "to cut". Sheep are <strong>shorn</strong> by sliding blades parallel to the skin. Same idea: layers sliding past each other.</p>
+        </div>
+      </div>
 
       <div class="sim">
         <div class="sim-head">
@@ -503,6 +562,16 @@
       <div class="callout">
         <p><strong>Normal force</strong> — acts <em>perpendicular</em> to the surface → produces compression / stretching.</p>
         <p><strong>Shear force</strong> — acts <em>parallel</em> to the surface → produces sliding.</p>
+      </div>
+
+      <div class="didyouknow">
+        <div class="dyk-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg>
+        </div>
+        <div class="dyk-body">
+          <div class="dyk-label">Did you know?</div>
+          <p>Skyscrapers must resist <strong>both</strong> kinds of force. Gravity pushes straight down (normal), while wind shears sideways. Engineers design for both — that's why tall buildings have deep foundations <em>and</em> stiff bracing.</p>
+        </div>
       </div>
 
       <p>The force is acting <em>along</em> the surface rather than directly <em>into</em> it. That single difference changes everything about how the material responds.</p>
@@ -547,6 +616,16 @@
           <div class="ro"><div class="k">Area</div><div class="v" id="aOut">0.50 <small>m²</small></div></div>
         </div>
       </div>
+
+      <div class="didyouknow">
+        <div class="dyk-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg>
+        </div>
+        <div class="dyk-body">
+          <div class="dyk-label">Did you know?</div>
+          <p><strong>Earthquakes</strong> are giant shear events. Two blocks of crust slide past each other along a fault — the same sliding motion as the orange block in the simulation above, just hundreds of kilometres long and decades in the making.</p>
+        </div>
+      </div>
     </div>
 
     <!-- ============== PAGE 4 · FLUID ============== -->
@@ -569,6 +648,16 @@
       <p>The important word is:</p>
       <div class="eq" style="font-size:26px;letter-spacing:.18em;color:var(--shear)">C O N T I N U O U S L Y</div>
       <p>Not "deforms a bit". Not "deforms and stops". It keeps going for as long as the shear stress is applied.</p>
+
+      <div class="didyouknow">
+        <div class="dyk-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg>
+        </div>
+        <div class="dyk-body">
+          <div class="dyk-label">Did you know?</div>
+          <p>Old windows are <strong>not</strong> thicker at the bottom because glass flows. That's a myth — glass is an <em>amorphous solid</em>, not a fluid. Old glass was simply made unevenly and glaziers installed the thicker side down.</p>
+        </div>
+      </div>
     </div>
 
     <!-- ============== PAGE 5 · COUETTE ============== -->
@@ -609,6 +698,16 @@
         </div>
       </div>
 
+      <div class="didyouknow">
+        <div class="dyk-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg>
+        </div>
+        <div class="dyk-body">
+          <div class="dyk-label">Did you know?</div>
+          <p><strong>Isaac Newton</strong> was the first to write down this linear relation: τ = μ · du/dy. Fluids that obey it are called <em>Newtonian</em>. Water, air, and oil are Newtonian — but <strong>ketchup, blood, and paint</strong> are not. Their viscosity changes with shear rate.</p>
+        </div>
+      </div>
+
       <p>Because the top plate moves, the fluid layers also move relative to each other. The layers near the moving plate move faster; the layers near the fixed plate move more slowly. The fluid is undergoing <strong>shear deformation</strong> — and it never stops while the plate keeps moving.</p>
 
       <div class="callout teal">
@@ -633,6 +732,16 @@
       </div>
 
       <p>The relative movement of the layers does not stop as long as the shear stress continues to act. That is what <strong>continuous deformation</strong> means.</p>
+
+      <div class="didyouknow">
+        <div class="dyk-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg>
+        </div>
+        <div class="dyk-body">
+          <div class="dyk-label">Did you know?</div>
+          <p>The <strong>Pitch Drop Experiment</strong> at the University of Queensland started in 1927. Pitch looks like a brittle solid you can shatter with a hammer — yet it <em>slowly</em> drips through a funnel. In almost 100 years, it has dripped only <strong>nine times</strong>. Proof that "continuous" can mean "one drop per decade".</p>
+        </div>
+      </div>
     </div>
 
     <!-- ============== PAGE 7 · SOLID vs FLUID ============== -->
@@ -677,6 +786,16 @@
           <li><strong>plastically</strong> → permanent deformation remains</li>
         </ul>
         <p>The important distinction is that a solid can sustain a <strong>finite</strong> deformation, whereas a fluid under sustained shear stress <strong>keeps deforming</strong>.</p>
+      </div>
+
+      <div class="didyouknow">
+        <div class="dyk-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg>
+        </div>
+        <div class="dyk-body">
+          <div class="dyk-label">Did you know?</div>
+          <p>Metals can also <strong>flow</strong> — just very slowly. Red-hot steel squeezed through a rolling mill deforms like thick dough. So "solid vs fluid" isn't only about the material: it's also about the <strong>timescale</strong> and the temperature.</p>
+        </div>
       </div>
     </div>
 
@@ -749,6 +868,16 @@
         <p style="font-family:Georgia,serif;font-size:19px;margin:6px 0">Fluid + shear stress → continuous sliding → <strong>flow</strong></p>
       </div>
 
+      <div class="didyouknow">
+        <div class="dyk-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg>
+        </div>
+        <div class="dyk-body">
+          <div class="dyk-label">Did you know?</div>
+          <p>One <strong>pascal</strong> is roughly the pressure of a single sheet of paper lying flat on a table. So a shear stress of a few hundred pascals is already quite large — the units are small on purpose, like pence versus pounds.</p>
+        </div>
+      </div>
+
       <p style="margin-top:40px;color:var(--muted);font-size:13.5px;text-align:center">— End of book —</p>
     </div>
 
@@ -816,7 +945,7 @@
     <textarea id="newPageHtml" spellcheck="false"></textarea>
 
     <p class="hint">
-      Tip: reuse the book's classes — <code>callout</code>, <code>callout shear</code>, <code>eq</code>, <code>chips</code>, <code>tbl-wrap</code>, <code>chain</code>, <code>deflist</code> — and wrap interactive bits in a <code>&lt;div class="sim"&gt;…&lt;/div&gt;</code> to keep them non-editable.
+      Tip: reuse the book's classes — <code>callout</code>, <code>callout shear</code>, <code>eq</code>, <code>chips</code>, <code>tbl-wrap</code>, <code>chain</code>, <code>deflist</code>, and the golden <code>didyouknow</code> box — and wrap interactive bits in <code>&lt;div class="sim"&gt;…&lt;/div&gt;</code> to keep them non-editable.
     </p>
 
     <div class="modal-actions">
@@ -842,7 +971,7 @@ const FLIP_MS = 950;
 /* ============================================================
    STORAGE RESTORE (must run BEFORE reg() calls)
    ============================================================ */
-const STORAGE_KEY = 'fluid-book-v3';
+const STORAGE_KEY = 'fluid-book-v4';
 
 (function restoreFromStorage(){
   try {
@@ -978,7 +1107,6 @@ nextBtn.addEventListener('click', goNext);
 
 document.addEventListener('keydown', (e) => {
   if (e.target.closest('input, button, textarea, select, [contenteditable]')) {
-    // still allow Escape and arrow-outside-editor
     if (e.key !== 'Escape') return;
   }
   if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); goNext(); }
@@ -1085,7 +1213,6 @@ function setEditMode(on){
     }
   });
 
-  // Make interactive blocks non-editable so sims still work
   document.querySelectorAll('.sim, .sim *, canvas, button, input, select, textarea, .eq').forEach(el => {
     if (on) el.setAttribute('contenteditable', 'false');
     else el.removeAttribute('contenteditable');
@@ -1116,7 +1243,6 @@ titleInput.addEventListener('input', () => {
   scheduleSave();
 });
 
-/* Debounced autosave */
 let saveTimer = null;
 function scheduleSave(){
   clearTimeout(saveTimer);
@@ -1148,6 +1274,16 @@ function saveToStorage(){
 const DEFAULT_NEW_PAGE =
 `<h2><span class="chip">·</span>New chapter</h2>
 <p>Write your content here. You can use any HTML tag — <strong>&lt;strong&gt;</strong>, <em>&lt;em&gt;</em>, lists, tables, images, and even a <code>&lt;canvas&gt;</code>.</p>
+
+<div class="didyouknow">
+  <div class="dyk-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg>
+  </div>
+  <div class="dyk-body">
+    <div class="dyk-label">Did you know?</div>
+    <p>Write a fun fact here. You can delete this box if you don't need it.</p>
+  </div>
+</div>
 
 <div class="callout">
   <p><strong>Tip:</strong> reuse the book's classes to keep the style consistent.</p>
@@ -1191,12 +1327,10 @@ function insertNewPage(){
   const newIdx = currentIdx + 1;
   closeAddModal();
 
-  // Enter edit mode
   if (!editMode) setEditMode(true);
 
   refreshPages();
 
-  // Reset flip state for new index
   pages.forEach((p, i) => p.classList.toggle('flipped', i < newIdx));
   currentIdx = newIdx;
   updateZ();
@@ -1205,7 +1339,6 @@ function insertNewPage(){
 
   saveToStorage();
 
-  // Scroll new page's top
   setTimeout(() => {
     if (pages[currentIdx]) pages[currentIdx].scrollTop = 0;
     resizeAll();
@@ -1233,19 +1366,12 @@ function deleteCurrentPage(){
 
 /* ---------- Save as HTML file ---------- */
 function saveAsHTML(){
-  // Ensure latest state is captured in DOM first
-  if (editMode) {
-    // strip contenteditable before cloning, but keep a copy
-  }
-
   const clone = document.documentElement.cloneNode(true);
 
-  // Clean up editor artefacts
   clone.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
   clone.querySelectorAll('[spellcheck]').forEach(el => el.removeAttribute('spellcheck'));
   clone.classList.remove('edit-mode');
 
-  // Reset flip / z-index so the exported book opens on the cover
   const clonedPages = clone.querySelectorAll('.page');
   clonedPages.forEach(p => {
     p.classList.remove('flipped');
@@ -1254,19 +1380,16 @@ function saveAsHTML(){
     p.style.transition = '';
   });
 
-  // Hide the editor toolbar and modal in the export
   const toolbar = clone.querySelector('.edit-toolbar');
   if (toolbar) toolbar.remove();
   const modal = clone.querySelector('#addModal');
   if (modal) modal.remove();
 
-  // Give the exported file its own storage key so it doesn't clash with the editor
   let html = clone.outerHTML.replace(
     /const STORAGE_KEY = '[^']+';/,
     "const STORAGE_KEY = 'fluid-book-export-" + Date.now() + "';"
   );
 
-  // Guard: if the replaced variable leaked into HTML, ensure doctype
   const doc = '<!DOCTYPE html>\n' + html;
 
   const blob = new Blob([doc], { type: 'text/html;charset=utf-8' });
@@ -1279,7 +1402,6 @@ function saveAsHTML(){
   document.body.removeChild(a);
   setTimeout(() => URL.revokeObjectURL(url), 2000);
 
-  // Save current edits to storage too, in case the user keeps working
   saveToStorage();
 }
 
@@ -1430,7 +1552,6 @@ reg('cvDir', function(o){
     ctx.stroke();
   }
 
-  /* LEFT — normal force */
   const cxL = pad + halfW / 2;
   const bxL = cxL - bw / 2;
   const squash = 1 - 0.05 * (0.5 + 0.5 * Math.sin(dirSim.t * 2.4));
@@ -1462,7 +1583,6 @@ reg('cvDir', function(o){
   txt(ctx, 'perpendicular to surface', cxL, baseY + 26, '#7f8dab', 12, 'center', 500);
   txt(ctx, '→ compression / stretching', cxL, baseY + 46, '#5f7093', 11.5, 'center', 500);
 
-  /* RIGHT — shear force */
   const cxR = pad * 2 + halfW + halfW / 2;
   const bxR = cxR - bw / 2;
   const amp   = Math.min(30, halfW * 0.22);
@@ -2078,10 +2198,8 @@ function loop(now){
 
   if (dirSim.playing) dirSim.t += DT;
 
-  // Draw only canvases on current page ±1
   canvases.forEach(o => {
     if (o.w === 0) return;
-    // Refresh pageIdx in case pages changed
     if (o.pageIdx === -1 || !o.c.isConnected) {
       const pageEl = o.c.closest('.page');
       o.pageIdx = pages.indexOf(pageEl);
@@ -2104,7 +2222,6 @@ function boot(){
   updateUI();
   resizeAll();
 
-  // restore flipped state if we started mid-book
   pages.forEach((p, i) => p.classList.toggle('flipped', i < currentIdx));
 
   setTimeout(resizeAll, 120);
